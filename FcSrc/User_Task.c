@@ -8,7 +8,9 @@ void UserTask_OneKeyCmd(void)
     //一键起飞/降落例程
     //////////////////////////////////////////////////////////////////////
     //用静态变量记录一键起飞/降落指令已经执行。
-    static u8 one_key_takeoff_f = 1, one_key_land_f = 1, one_key_mission_f = 0;
+    static u8 one_key_takeoff_f = 1, 
+    one_key_land_f = 1,
+     one_key_mission_f = 0;
     static u8 mission_step;
     //判断有遥控信号才执行
     if (rc_in.fail_safe == 0)

@@ -71,7 +71,7 @@ const float fast_atan_table[257] =
 		7.714826e-01, 7.734940e-01, 7.754975e-01, 7.774932e-01,
 		7.794811e-01, 7.814612e-01, 7.834335e-01, 7.853983e-01,
 		7.853983e-01};
-
+//绝对值函数
 float my_abs(float f)
 {
 	if (f >= 0.0f)
@@ -81,7 +81,7 @@ float my_abs(float f)
 
 	return -f;
 }
-
+// REAL 是float类型 不知道为什么定义这些死东西
 REAL fast_atan2(REAL y, REAL x)
 {
 	REAL x_abs, y_abs, z;
@@ -182,18 +182,6 @@ float my_atan(float x, float y)
 
 float my_sqrt_reciprocal(float number)
 {
-	//	long i;
-	//	float x, y;
-	//	const float f = 1.5F;
-	//	x = number * 0.5F;
-	//	y = number;
-	//	i = * ( long * ) &y;
-	//	i = 0x5f3759df - ( i >> 1 );
-
-	//	y = * ( float * ) &i;
-	//	y = y * ( f - ( x * y * y ) );
-	//	y = y * ( f - ( x * y * y ) );
-
 	long i;
 	float x, y;
 
@@ -212,17 +200,6 @@ float my_sqrt_reciprocal(float number)
 //快速平方根算法
 float my_sqrt(float number)
 {
-	//	long i;
-	//	float x, y;
-	//	const float f = 1.5F;
-	//	x = number * 0.5F;
-	//	y = number;
-	//	i = * ( long * ) &y;
-	//	i = 0x5f3759df - ( i >> 1 );
-
-	//	y = * ( float * ) &i;
-	//	y = y * ( f - ( x * y * y ) );
-	//	y = y * ( f - ( x * y * y ) );
 	return number * my_sqrt_reciprocal(number);
 }
 
@@ -248,7 +225,7 @@ double my_sin(double rad)
 {
 	s8 flag_ = 1;
 
-	if (rad >= ONE_PI)
+	if (rad >= ONE_PI)//ONE_PI=3.14159265
 	{
 		rad -= ONE_PI;
 		flag_ = -1;
